@@ -67,9 +67,10 @@ function logSelection(event) {
   }
 const input = document.querySelector('input');
 input.addEventListener('select',logSelection);
+
 //propropgation//
 Array.from(document.all).forEach(el=>{
-    el.addEventListener('click',function (event{
+    el.addEventListener('click',function (event){
         console.log("target",event.target)
         console.log("current",event.currentTarget)
 
