@@ -51,5 +51,20 @@ document.addEventListener("keyup", event =>{
         event.style.transform =`${scale}`
     })
     let scale =1;
-//new one//
+//resize//
+function sizeOut(){
+    heightOutput.textContent = window.innerHeight
+    windowOutput.textContent = window. innerWidth
+}
+window.onresize = sizeOut;
+window.addEventListener("resize", sizeOut);
+//select//
+function logSelection(event) {
+    const log = document.getElementById('log');
+    const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+    log.textContent = `You selected: ${selection}`;
+  }
+const input = document.querySelector('input');
+input.addEventListener('select',logSelection);
+
 
