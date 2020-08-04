@@ -53,6 +53,7 @@ document.addEventListener("keyup", event =>{
     let scale =1;
 //resize//
 function sizeOut(){
+    event.preventDefault();
     heightOutput.textContent = window.innerHeight
     windowOutput.textContent = window. innerWidth
 }
@@ -66,5 +67,14 @@ function logSelection(event) {
   }
 const input = document.querySelector('input');
 input.addEventListener('select',logSelection);
+//propropgation//
+Array.from(document.all).forEach(el=>{
+    el.addEventListener('click',function (event{
+        console.log("target",event.target)
+        console.log("current",event.currentTarget)
+
+        event.stopPropagation()
+    })
+})
 
 
